@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <body class="container">
+      <div class ="smallbreak"> </div>
+      <nav class="navbar fixed-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Garrett Woodson</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutme.html">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="resume.html">Resume</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Personal Projects
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="voter.html">Movie Voter</a></li>
+                  <li><a class="dropdown-item" href="google.html">Google Mimic</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="mediumbreak"></div>
+      <h3 class="centered"> Google Front End Mimic</h3>
+      <div class="centered">
+        <video width="600" controls>
+          <source src="google.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p style="color: #ffffff;">
+        This was my first project for Harvard's CS50: Web Development with Python and JavaScript. It's a web based application that
+        mimics the front end aesthetic of the Google Search Engine and when users submit a query via the input field, the are redirected 
+        to the google search result for that query. As well as the google search feature, there is also Google Image Search, Google Advanced Search
+        and an 'I'm Feeling Lucky' form. To create and submit this site for credit I used HTML, CSS and Git
+      </p>
+    </body>
+</html>
