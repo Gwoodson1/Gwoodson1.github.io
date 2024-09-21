@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <link href="static/styles.css" rel="stylesheet">
-        <title>My Webpage</title>
+        <title>Swim Lesson Pairing Application</title>
     </head>
     <body class="container">
-      <div class ="smallbreak"> </div>
+      <!-- Navbar -->
       <nav class="navbar fixed-top navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Garrett Woodson</a>
@@ -32,27 +31,57 @@
                   Personal Projects
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="swam.html">Swim Lesson Pairing Application</a></li>
+                    <li><a class="dropdown-item" href="laptop.html">Laptop Power Bank</a></li>
                   <li><a class="dropdown-item" href="voter.html">Movie Voter</a></li>
-                  <li><a class="dropdown-item" href="google.html">Google Mimic</a></li>
                 </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+
+      <!-- Add spacing for fixed navbar -->
       <div class="mediumbreak"></div>
-      <h3 class="centered"> Google Front End Mimic</h3>
-      <div class="centered">
-        <video width="600" controls>
-          <source src="Videos/google.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-        </video>
+      
+      <!-- Project Header -->
+      <h3 class="centered">Laptop Power Bank</h3>
+     
+      <div class="centered"  style="padding-bottom: 20px;">
+        <img height="350" src="Photos/laptop1.jpg" alt="LAPTOP_1_JPEG">
+        <img height="350" src="Photos/laptop3.jpg" alt="LAPTOP_3_JPEG">
+        <img height="350" src="Photos/laptop2.jpg" alt="LAPTOP_2_JPEG">
       </div>
-      <p style="color: #ffffff;">
-        This was my first project for Harvard's CS50: Web Development with Python and JavaScript. It's a web based application that
-        mimics the front end aesthetic of the Google Search Engine and when users submit a query via the input field, they are redirected 
-        to the google search result for that query. As well as the google search feature, there is also Google Image Search, Google Advanced Search
-        and an 'I'm Feeling Lucky' form. To create and submit this site for credit I used HTML, CSS and Git
-      </p>
+      
+      <!-- Project Description -->
+      <div class="project-section">
+        <h4>Project Description</h4>
+        <p style="color: #ffffff;">
+            For this project I built a fully functional laptop power bank from scratch. The power bank can charge laptops and other Type-C devices at up to 100 W and has the capacity to fully charge a MacBook air almost twice!
+        </p>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="project-section">
+        <h4>Technical Details</h4>
+        <ul style="color: #ffffff;">
+          <li>Power bank is composed of eight 18650 3500 mAh Rechargable Lithium Ion Batteries, arranged in 4s 2p configuration</li>
+          <li>Integrated USB-C power delivery protocol to charge laptops and other Type-C devices</li>
+          <li>Maximum power output is 100 W (20 V x 5 A) with 95 Wh of capacity </li>
+          <li>Custom 3D printed case with ventilation to prevent overheating</li>
+        </ul>
+      </div>
+
+      <!-- Languages/Technologies Used -->
+      <div class="project-section">
+        <h4>Skills & Technologies Used</h4>
+        <ul style="color: #ffffff;">
+          <li>Circuitry</li>
+          <li>Soldering</li>
+          <li>Spot Welding</li>
+          <li>3D Printing</li>
+          <li>Schematics Reading</li>
+        </ul>
+      </div>
     </body>
 </html>
