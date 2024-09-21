@@ -73,7 +73,6 @@ h2 {
 
 /* Ensure the card body text is black for readability */
 .card-body p, .card-body h5 {
-    color: #000000; /* Black text for readability */
     font-family: 'Courier New', Courier, monospace;
     padding: 10px; /* Match the aesthetic */
 }
@@ -83,6 +82,9 @@ h2 {
     padding: 10px; /* Reduce padding */
     margin-bottom: 20px; /* Reduce bottom margin between cards */
     border-radius: 8px; /* Slight border radius for clean look */
+    background-color: #000000 !important; /* Black background for the card */
+    color: #33FF33 !important; /* Green text inside the card */
+    border: 1px solid #33FF33;
 }
 
 /* Reduce image size */
@@ -97,11 +99,13 @@ h2 {
 .card-text {
     font-size: 16px; /* Smaller font size to reduce overall size */
     line-height: 1.4; /* Maintain readability */
+    color: #33FF33 !important;
 }
 
 /* Adjust card title */
 .card-title {
     font-size: 18px; /* Slightly reduce title size */
+    color: #33FF33 !important;
 }
 
 .project-section {
@@ -114,6 +118,27 @@ pre {
     color: #33FF33;
     padding: 10px;
     border-radius: 5px;
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: #000000 !important; /* Black background */
+}
+
+.navbar .nav-link, .navbar .navbar-brand {
+    color: #33FF33 !important; /* Green text */
+}
+
+.navbar .dropdown-menu {
+    background-color: #000000; /* Black dropdown menu */
+}
+
+.navbar .dropdown-item {
+    color: #33FF33 !important; /* Green dropdown item */
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #1a1a1a !important; /* Slightly lighter black hover effect */
 }
 
 @keyframes blink {
