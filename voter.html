@@ -32,6 +32,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="voter.html">Movie Voter</a></li>
+                  <li><a class="dropdown-item" href="swam.html">Swim Lesson Pairing Application</a></li>
                 </ul>
               </li>
             </ul>
@@ -67,6 +68,7 @@
         <ul style="color: #ffffff;">
           <li>Utilized Flask as the web framework to handle backend logic and routing.</li>
           <li>Implemented SQLite for lightweight database storage of movies and votes.</li>
+          <li>Integrated IMDb datasets to provide users with over 400,000 movie titles to choose from. </li>
           <li>Frontend designed using HTML, CSS, and Jinja templating engine.</li>
         </ul>
       </div>
@@ -84,20 +86,40 @@
         </ul>
       </div>
 
-      <!-- Code Snippet  Update  with proper github link and code snippet-->
+      <!-- Code Snippet -->
       <div class="project-section">
         <h4>Code Snippet</h4> 
-        <div style="color: #ffffff;">This function is part of the Movie Voter application's voting logic. It demonstrates the use of Flask for routing and SQLite for database management. See the full project <a href="https://github.com/yourusername/MovieVoter">on GitHub</a>.</div>
+        <div style="color: #ffffff;">This function is part of the Movie Voter application's ranking logic. It demonstrates the use of Flask for routing and SQLite for database management. See the full project <a href="https://github.com/Gwoodson1/movieVoter">on GitHub</a>.</div>
         <pre style="background-color: #1a1a1a; color: #33FF33; padding: 10px;">
 <code>
-# Example Python code for handling movie votes
-@app.route('/vote', methods=['POST'])
-def vote():
-    movie_id = request.form['movie_id']
-    user_id = session['user_id']
-    db.execute('INSERT INTO votes (user_id, movie_id) VALUES (?, ?)', (user_id, movie_id))
-    db.commit()
-    return redirect('/')
+  @app.route("/rankings")
+  @login_required
+  def rankings():
+      """
+      Display ranked movies for all groups the user is a member of.
+      Each group's movie rankings are based on the number of votes each movie received.
+  
+      Returns:
+          Rendered HTML template displaying movie rankings for each group.
+      """
+  
+      # Query to fetch all the groups the current user is a member of
+      groups = db.execute("SELECT groupname, id FROM groups WHERE id IN (SELECT group_id FROM members WHERE user_id = ?)", session["user_id"])
+  
+      # Iterate over each group to retrieve its movie rankings
+      for group in groups:
+          # Query to fetch the movies and their vote counts, ordered by the number of votes (frequency)
+          movies = db.execute("SELECT movies.title, movies.year, COUNT(watch_list.movie_id) as frequency \
+                              FROM movies INNER JOIN watch_list ON movies.id=watch_list.movie_id \
+                              WHERE watch_list.group_id = ? \
+                              GROUP BY watch_list.group_id, watch_list.movie_id \
+                              ORDER BY COUNT(watch_list.movie_id) DESC;", group['id'])
+  
+          # Attach the list of ranked movies to the group
+          group['movies'] = movies
+  
+      # Render the rankings.html template, passing the list of groups and their ranked movies
+      return render_template("rankings.html", groups=groups)
 </code>
         </pre>
       </div>

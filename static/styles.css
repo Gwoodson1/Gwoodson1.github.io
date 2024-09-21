@@ -74,7 +74,34 @@ h2 {
 /* Ensure the card body text is black for readability */
 .card-body p, .card-body h5 {
     color: #000000; /* Black text for readability */
-    font-family: 'Courier New', Courier, monospace; /* Match the aesthetic */
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px; /* Match the aesthetic */
+}
+/* Reduce padding and margin for smaller card size */
+.card {
+    height: auto; /* Let the card adjust its height dynamically based on content */
+    padding: 10px; /* Reduce padding */
+    margin-bottom: 20px; /* Reduce bottom margin between cards */
+    border-radius: 8px; /* Slight border radius for clean look */
+}
+
+/* Reduce image size */
+.card-img-top {
+    height: auto; /* Adjust height as needed */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px /* Ensures the image covers the space without distortion */
+}
+
+/* Adjust text size and margin */
+.card-text {
+    font-size: 16px; /* Smaller font size to reduce overall size */
+    line-height: 1.4; /* Maintain readability */
+}
+
+/* Adjust card title */
+.card-title {
+    font-size: 18px; /* Slightly reduce title size */
 }
 
 .project-section {
